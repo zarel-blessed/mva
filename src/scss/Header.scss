@@ -1,0 +1,18 @@
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  width: 100%;
+  z-index: 100;
+  transition: 0.3s linear;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75em 1em;
+
+    .icon {
+      color: var(--clr-light);
+    }
+  }
+}
