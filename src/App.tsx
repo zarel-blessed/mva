@@ -11,8 +11,8 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    let genres_list: [number, string][] = [];
     fetchDataFromAPI(`genre/movie/list?language=en`).then((data) => {
-      let genres_list: [number, string][] = [];
       data.genres.forEach((genre: { id: number; name: string }) => {
         genres_list.push([genre.id, genre.name]);
       });
@@ -21,8 +21,8 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    let genres_list: [number, string][] = [];
     fetchDataFromAPI(`genre/tv/list?language=en`).then((data) => {
-      let genres_list: [number, string][] = [];
       data.genres.forEach((genre: { id: number; name: string }) => {
         genres_list.push([genre.id, genre.name]);
       });

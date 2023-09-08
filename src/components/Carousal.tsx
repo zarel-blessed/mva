@@ -18,26 +18,28 @@ const Carousal = ({
   isTV: boolean;
 }) => {
   return (
-    <div className="carousal">
-      <div className="carousal-top">
-        <h2>{title}</h2>
+    data?.length > 0 && (
+      <div className="carousal">
+        <div className="carousal-top">
+          <h2>{title}</h2>
+        </div>
+        <Swiper
+          slidesPerView={6}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {data?.map((item: any) => (
+            <SwiperSlide key={item.id}>
+              <MovieCard movie={item} isTV={isTV} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-      <Swiper
-        slidesPerView={6}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        {data?.map((item: any) => (
-          <SwiperSlide key={item.id}>
-            <MovieCard movie={item} isTV={isTV} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    )
   );
 };
 

@@ -1,21 +1,20 @@
 import Image from "./Image";
 import "../scss/MovieCard.scss";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import fallback from "../assets/fallback_image.png";
 
 const MovieCard = ({ movie, isTV }: { movie: any; isTV: boolean }) => {
   const genres = isTV
     ? useSelector<any, any>((state) => state.configure.tv_genres)
     : useSelector<any, any>((state) => state.configure.movie_genres);
 
-  let genre_list = movie.genre_ids.map((id: number) => {
+  let genre_list = movie?.genre_ids.map((id: number) => {
     let i = 0;
     while (genres?.[i][0] != id) {
       i++;
     }
     return genres?.[i][1];
   });
-
-  console.log(`${isTV}: ${genre_list}`);
 
   return (
     <article>
@@ -35,7 +34,11 @@ const MovieCard = ({ movie, isTV }: { movie: any; isTV: boolean }) => {
           </div>
         </div>
         <Image
-          src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
+          src={
+            movie?.poster_path
+              ? `https://image.tmdb.org/t/p/original${movie?.poster_path}`
+              : fallback
+          }
           alt="Card"
           width="180px"
         />
