@@ -8,22 +8,24 @@ import "../scss/MovieDetails.scss";
 import Cast from "../components/Cast";
 import Carousal from "../components/Carousal";
 
-const MovieDetails = () => {
+const ShowDetails = () => {
   const [details, setDetails] = useState<any>(null);
   const [similar, setSimilar] = useState<any[] | null>(null);
   const { id } = useParams();
 
   useEffect(() => {
-    fetchDataFromAPI(`movie/${id}?language=en-US`).then((data) =>
+    fetchDataFromAPI(`tv/${id}?language=en-US`).then((data) =>
       setDetails(data)
     );
   }, [id]);
 
   useEffect(() => {
-    fetchDataFromAPI(`movie/${id}/similar?language=en-US&page=1`).then((data) =>
+    fetchDataFromAPI(`tv/${id}/similar?language=en-US&page=1`).then((data) =>
       setSimilar(data?.results)
     );
   }, [id]);
+
+  // console.log(similar);
 
   return (
     <main>
@@ -47,8 +49,8 @@ const MovieDetails = () => {
             <aside>
               <div>
                 <h2 className="title">
-                  {details?.title}{" "}
-                  <span>({details?.release_date.slice(0, 4)})</span>
+                  {details?.name}{" "}
+                  <span>({details?.first_air_date.slice(0, 4)})</span>
                 </h2>
                 <p className="tagline">{details?.tagline}</p>
               </div>
@@ -64,7 +66,7 @@ const MovieDetails = () => {
                   {details?.status}{" "}
                   {details?.status == "Released" && (
                     <span>
-                      {details?.release_date.split("-").reverse().join("-")}
+                      {details?.first_air_date.split("-").reverse().join("-")}
                     </span>
                   )}
                 </p>
@@ -95,8 +97,8 @@ const MovieDetails = () => {
             </aside>
           </section>
           <div className="carousals">
-            <Cast id={Number(id)} isTV={false} />
-            <Carousal data={similar} title="Similar" isTV={false} />
+            <Cast id={Number(id)} isTV={true} />
+            <Carousal data={similar} title="Similar" isTV={true} />
           </div>
         </section>
       </Wrapper>
@@ -104,4 +106,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default ShowDetails;

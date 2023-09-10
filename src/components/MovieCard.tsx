@@ -2,6 +2,7 @@ import Image from "./Image";
 import "../scss/MovieCard.scss";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import fallback from "../assets/fallback_image.png";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movie, isTV }: { movie: any; isTV: boolean }) => {
   const genres = isTV
@@ -16,8 +17,14 @@ const MovieCard = ({ movie, isTV }: { movie: any; isTV: boolean }) => {
     return genres?.[i][1];
   });
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/${isTV ? "tv" : "movie"}/${movie?.id}`);
+  };
+
   return (
-    <article>
+    <article onClick={handleClick}>
       <div className="image-card">
         <div className="outer">
           <div

@@ -1,0 +1,24 @@
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85em;
+
+  .profile_pic {
+    .image {
+      border-radius: 10px;
+    }
+  }
+
+  .name_role {
+    padding-left: 0.85em;
+
+    .name {
+      font-weight: 500;
+      color: var(--clr-light);
+    }
+
+    .character {
+      color: var(--clr-gray);
+    }
+  }
+}

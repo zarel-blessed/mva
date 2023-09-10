@@ -4,6 +4,7 @@ import Image from "./Image";
 import { FaSearch } from "react-icons/fa";
 import "../scss/Header.scss";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,7 +27,9 @@ const Header = () => {
     >
       <Wrapper>
         <section className="header">
-          <Image src={logo} alt="Logo" width="80px" />
+          <Link to="/">
+            <Image src={logo} alt="Logo" width="80px" />
+          </Link>
           <FaSearch className="icon" />
         </section>
       </Wrapper>
