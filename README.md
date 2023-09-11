@@ -14,17 +14,17 @@ TypeScript, VITE, React, SCSS and Axios
 
 # Logo
 
-![Logo](/logo.png "MVA Logo")
+![Logo](/public/logo.png "MVA Logo")
 
 ## Screenshots
 
 MVA Homepage ->
 
-![App Screenshot](/screenshot_01.png "MVA Homepage")
+![App Screenshot](/public/screenshot_01.png "MVA Homepage")
 
 MVA Movie Details Page ->
 
-![App Screenshot](/screenshot_02.png "MVA Movie Details Page")
+![App Screenshot](/public/screenshot_02.png "MVA Movie Details Page")
 
 ## Run MVA Locally
 
