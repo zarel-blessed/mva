@@ -1,27 +1,57 @@
-# React + TypeScript + Vite
+# MVA - a Movies Database
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MVA is a movies database website on which you can discover and search over millions of movies. You can get details about the cast of the movie, release date, user rating, overview, etc... and can get similar movies recomendations also.
 
-Currently, two official plugins are available:
+## Environment Variables
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run this project, you will need to add the following environment variables to your .env file
 
-## Expanding the ESLint configuration
+`VITE_APP_TMDB_TOKEN` -> Your TMDB Author Token
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠 Tools and Technologies
 
-- Configure the top-level `parserOptions` property like this:
+TypeScript, VITE, React, SCSS and Axios
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+# Logo
+
+![Logo](/logo.png "MVA Logo")
+
+## Screenshots
+
+MVA Homepage ->
+
+![App Screenshot](/screenshot_01.png "MVA Homepage")
+
+MVA Movie Details Page ->
+
+![App Screenshot](/screenshot_02.png "MVA Movie Details Page")
+
+## Run MVA Locally
+
+Clone the project
+
+```bash
+  git clone https://zarel-blessed/mva
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to the project directory
+
+```bash
+  cd mva
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+## Authors
+
+- [@zarel-blessed](https://www.github.com/zarel-blessed)
